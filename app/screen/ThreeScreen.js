@@ -5,7 +5,8 @@ import {
     View,
     TouchableNativeFeedback,
     TouchableOpacity,
-    TouchableWithoutFeedback
+    TouchableWithoutFeedback,
+    Navigator
 } from 'react-native'
 
 export default class ThreeScreen extends Component {
@@ -22,6 +23,10 @@ export default class ThreeScreen extends Component {
     };
     textForPress = ()=>{
         console.log('ddddddddd')
+    };
+
+    toTabScreen = ()=>{
+        this.props.navigation.navigate('Table')
     };
 
     //注意TouchableHighlight只能有一个子控件，如果有多个要用View包起来。
@@ -63,8 +68,19 @@ export default class ThreeScreen extends Component {
                     </View>
                 </TouchableWithoutFeedback>
 
+                <Text style={{padding:20}}>跳转到TableNavigator</Text>
+
+                <TouchableWithoutFeedback onPress={this.toTabScreen.bind(this)}>
+
+                    <View style={{height:30,alignItems:'center',justifyContent:'center',backgroundColor:'aquamarine'}} >
+                        <Text style={{padding:20}}>跳转</Text>
+                    </View>
+
+                </TouchableWithoutFeedback>
 
             </View>
+
+
 
         );
     }

@@ -49,12 +49,12 @@ export default  class DetailScreen extends Component {
         console.log("AndroidTestComponent=====render");
 
         return (
-            <View>
-                <Text style={{backgroundColor:this.props.color ,padding: 10} } ref="texts" >haleasdasdasd</Text>
+            <View style={{flex:1,flexDirection:'column'}}>
+                <Text style={{flex:1,backgroundColor:this.props.color ,padding: 10} } ref="texts" >haleasdasdasd</Text>
 
 
                 <TextInput
-                style={{height:50,padding:10}}
+                style={{flex:2,height:50,padding:10}}
                 placeholder="Type here to translate!"
                 />
 
@@ -64,7 +64,6 @@ export default  class DetailScreen extends Component {
                 onPress={()=>{
                     this.props.navigation.navigate('Three')
                 }}
-                style={{width:100,height:100}}
                 />
             </View>
             //如何使用props
