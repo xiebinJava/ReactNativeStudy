@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import {Text,StyleSheet,Image} from 'react-native'
+import {Text,StyleSheet,Image,View} from 'react-native'
 
 export default class TabOneScreen extends Component{
     static navigationOptions = {
@@ -15,18 +15,52 @@ export default class TabOneScreen extends Component{
             );
         },
     };
+    constructor (props){
+        super(props);
+    }
+    render(){
+        var str = 'var出来的字符串';
+        return (
+            <View>
+                <MyText name = 'hello' age = '18'></MyText>
+                <Text style={styles.textStyle}>{str}</Text>
+            </View>
+        );
+    }
+}
 
+class MyText extends Component{
+    constructor(props){
+        super(props);
+        for (var key in props){
+            console.log("---key:"+key+"---value:"+props[key]);
+        }
+    }
 
     render(){
-        return (
-            <Text>one</Text>
+        var name = this.props.name;
+        var age = this.props.age;
+
+        return(
+            <View>
+                <Text>{name}</Text>
+                <Text>{age}</Text>
+            </View>
         );
     }
 
+
 }
+
+
+
 const styles = StyleSheet.create({
     tabBarIcon: {
         width: 24,
         height: 24,
     },
+
+    textStyle:{
+        fontSize:25
+    }
 });

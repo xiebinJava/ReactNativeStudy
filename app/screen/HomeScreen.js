@@ -17,7 +17,7 @@ const {width} = Dimensions.get('window');
 export  default class HomeScreen extends Component {
 
     constructor(props) {
-        super(props)
+        super(props);
         this.nav = this.props.navigation;
         this.state = {
             canClick: false //避免重复点击按钮，造成点击事件重复执行
