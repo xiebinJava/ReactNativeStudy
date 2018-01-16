@@ -1,7 +1,8 @@
-import React,{Component} from 'react'
-import {Text,StyleSheet,Image} from 'react-native'
+import React, {Component} from 'react'
+import {Text, StyleSheet, Image, TouchableWithoutFeedback, ToastAndroid, View} from 'react-native'
 
-export default class TabTwoScreen extends Component{
+export default class TabTwoScreen extends Component {
+
     static navigationOptions = {
         tabBarLabel: '我的',
         tabBarIcon: ({focused, tintColor}) => {
@@ -10,22 +11,35 @@ export default class TabTwoScreen extends Component{
                     <Image style={styles.tabBarIcon} source={require('../../images/select_home_account.png')}/>
                 );
             }
-
             return (
                 <Image style={styles.tabBarIcon} source={require('../../images/unselect_home_account.png')}/>
             );
         },
     };
 
-    render(){
+
+    fetherData = () => {
+
+    };
+
+    render() {
         return (
-            <Text>two</Text>
+            <View style={{flex:1,flexDirection:'column'}}>
+                <TouchableWithoutFeedback onPress={this.fetherData()}>
+                    <View>
+                        <Text>aaaaaaaaaaa</Text>
+                    </View>
+                </TouchableWithoutFeedback>
+
+
+            </View>
+
         );
     }
 }
 const styles = StyleSheet.create({
-    tabBarIcon:{
-        width:25,
-        height:25
+    tabBarIcon: {
+        width: 25,
+        height: 25
     }
 });

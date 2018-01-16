@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import {Text,StyleSheet,Image,View} from 'react-native'
+import {Text,StyleSheet,Image,View,TouchableWithoutFeedback} from 'react-native'
 
 export default class TabOneScreen extends Component{
     static navigationOptions = {
@@ -15,15 +15,39 @@ export default class TabOneScreen extends Component{
             );
         },
     };
+
+    pressText = ()=>{
+        fetch('http://facebook.github.io/react-native/movies.json')
+            .then((response) => response.json())
+            .then((responseJson) => {
+                // console.log(responseJson);
+                let obj = responseJson;
+                console.log(obj.title);
+                // ToastAndroid.show(responseJson.description, ToastAndroid.SHORT)
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
+
+
     constructor (props){
         super(props);
     }
+
     render(){
         var str = 'var出来的字符串';
         return (
             <View>
                 <MyText name = 'hello' age = '18'></MyText>
-                <Text style={styles.textStyle}>{str}</Text>
+
+                <TouchableWithoutFeedback onPress={this.pressText}>
+                    <View>
+                        <Text style={styles.textStyle}>{str}</Text>
+                    </View>
+
+                </TouchableWithoutFeedback>
+
             </View>
         );
     }

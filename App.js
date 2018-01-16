@@ -25,7 +25,8 @@ import TabTwoScreen from './app/screen/TabTwoScreen'
 const TableScreen = TabNavigator(
     {
         TabOne: {screen: TabOneScreen},
-        tabTwo: {screen: TabTwoScreen}
+
+        tabTwo: {screen: TabTwoScreen},
     },{
         tabBarOptions: {
             activeTintColor: '#ff0000',
@@ -52,7 +53,7 @@ const RootNavigator = StackNavigator(
         Home: {screen: HomeScreen},
         Detail: {screen: DetailScreen},
         Three: {screen: ThreeScreen},
-        Table: {screen: TableScreen}
+        Table: {screen: TableScreen},
     },
     {
         initialRouteName: 'Home',
