@@ -17,12 +17,12 @@ export default class TabOneScreen extends Component{
     };
 
     pressText = ()=>{
-        fetch('http://facebook.github.io/react-native/movies.json')
+        fetch('https://api.douban.com/v2/movie/subject/22265634')
             .then((response) => response.json())
             .then((responseJson) => {
                 // console.log(responseJson);
                 let obj = responseJson;
-                console.log(obj.title);
+                console.log(obj.alt);
                 // ToastAndroid.show(responseJson.description, ToastAndroid.SHORT)
             })
             .catch((error) => {
